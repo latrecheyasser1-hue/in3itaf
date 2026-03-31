@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --black-deep: #0D0D0D;
+    --black-card: #141414;
+    --ivory: #FAF3E0;
+    --burgundy: #6B1A2A;
+    --text-primary: #FAF3E0;
+    --text-muted: #A89070;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black-deep text-ivory antialiased;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply w-full bg-black-card border border-white/10 rounded-xl px-4 py-3 text-ivory outline-none focus:border-gold transition-all duration-300 placeholder:text-ivory/20;
+  }
+
+  .glass-card {
+    @apply bg-black-card/40 backdrop-blur-md border border-white/5;
+  }
+}
+
+@layer utilities {
+  .clip-path-curved {
+    clip-path: ellipse(150% 100% at 50% 0%);
+  }
+  .bg-pattern {
+    background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z" fill="%23c9a84c" fill-opacity="0.05" fill-rule="evenodd"/%3E%3C/svg%3E');
+  }
+}
